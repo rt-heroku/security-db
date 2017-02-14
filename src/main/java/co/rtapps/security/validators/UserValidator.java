@@ -1,11 +1,11 @@
-package com.heroku.security.validators;
+package co.rtapps.security.validators;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import com.heroku.security.entities.UserInputDto;
+import co.rtapps.security.entities.UserInputDto;
 
 @Component
 public class UserValidator implements Validator {

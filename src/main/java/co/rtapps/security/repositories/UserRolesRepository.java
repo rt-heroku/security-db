@@ -1,11 +1,11 @@
-package com.heroku.security.repositories;
+package co.rtapps.security.repositories;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.heroku.security.entities.Role;
+import co.rtapps.security.entities.Role;
 
 @Repository
 public interface UserRolesRepository extends CrudRepository<Role, Long> {

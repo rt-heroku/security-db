@@ -1,4 +1,4 @@
-package com.heroku.security.entities;
+package co.rtapps.security.entities;
 
 import javax.persistence.*;
 import java.util.Set;

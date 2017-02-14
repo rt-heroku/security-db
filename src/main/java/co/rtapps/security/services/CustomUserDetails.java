@@ -1,4 +1,4 @@
-package com.heroku.security.services;
+package co.rtapps.security.services;
 
 import java.util.Collection;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.StringUtils;
 
-import com.heroku.security.entities.UserAccount;
+import co.rtapps.security.entities.UserAccount;
 
 public class CustomUserDetails extends UserAccount implements UserDetails {	
 	

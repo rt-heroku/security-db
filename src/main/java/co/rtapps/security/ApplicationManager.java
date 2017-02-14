@@ -14,10 +14,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.heroku.security.entities.Role;
-import com.heroku.security.entities.UserAccount;
-import com.heroku.security.repositories.UserRepository;
-import com.heroku.security.repositories.UserRolesRepository;
+import co.rtapps.security.entities.Role;
+import co.rtapps.security.entities.UserAccount;
+import co.rtapps.security.repositories.UserRepository;
+import co.rtapps.security.repositories.UserRolesRepository;
 
 @Configuration
 @ComponentScan

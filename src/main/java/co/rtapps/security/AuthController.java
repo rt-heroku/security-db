@@ -21,10 +21,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.heroku.security.entities.UserInputDto;
-import com.heroku.security.services.SecurityService;
-import com.heroku.security.services.UserDetailsServiceImpl;
-import com.heroku.security.validators.UserValidator;
+import co.rtapps.security.entities.UserInputDto;
+import co.rtapps.security.services.SecurityService;
+import co.rtapps.security.services.UserDetailsServiceImpl;
+import co.rtapps.security.validators.UserValidator;
 
 @RestController
 @RequestMapping("/user")

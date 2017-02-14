@@ -1,4 +1,4 @@
-package com.heroku.security.services;
+package co.rtapps.security.services;
 
 import java.util.HashSet;
 import java.util.List;
@@ -14,11 +14,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.heroku.security.entities.Role;
-import com.heroku.security.entities.UserAccount;
-import com.heroku.security.entities.UserInputDto;
-import com.heroku.security.repositories.UserRepository;
-import com.heroku.security.repositories.UserRolesRepository;
+import co.rtapps.security.entities.Role;
+import co.rtapps.security.entities.UserAccount;
+import co.rtapps.security.entities.UserInputDto;
+import co.rtapps.security.repositories.UserRepository;
+import co.rtapps.security.repositories.UserRolesRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

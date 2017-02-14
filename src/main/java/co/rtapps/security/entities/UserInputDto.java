@@ -1,4 +1,4 @@
-package com.heroku.security.entities;
+package co.rtapps.security.entities;
 
 import java.util.ArrayList;
 import java.util.List;
