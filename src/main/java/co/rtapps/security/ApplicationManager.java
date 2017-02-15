@@ -45,18 +45,20 @@ public class ApplicationManager {
 
 		@Override
         public void run(String... arg0) throws Exception {
+    		UserAccount u = userRepository.findByUsername(SYSADMIN);
     		
-    		for (int i = 0; i< arg0.length; i++)
-    			System.out.println("Running with Argument [" + i + "] =" + arg0[i] );
-
-        	if (arg0.length == 2){
+    		if ((u == null) || (arg0.length == 2)){
+    		
+//    		for (int i = 0; i< arg0.length; i++)
+//    			System.out.println("Running with Argument [" + i + "] =" + arg0[i] );
+//
+//        	if (arg0.length == 2){
 	        	System.out.println("EXECUTING ApplicationManager this will create or replace the SUPER USER " + SYSADMIN + " !!!! - ");
 	        	String password = arg0[0];
 	        	String email = arg0[1];
 	        	BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	    		String hashedPassword = passwordEncoder.encode(password);
 	    		
-	    		UserAccount u = userRepository.findByUsername(SYSADMIN);
         		Set<Role> roles = new HashSet<Role>();
     			Role r = userRolesRepository.findByName(ROLE_ADMIN);
     			if (r == null)
