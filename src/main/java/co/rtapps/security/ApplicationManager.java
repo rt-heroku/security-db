@@ -47,15 +47,28 @@ public class ApplicationManager {
         public void run(String... arg0) throws Exception {
     		UserAccount u = userRepository.findByUsername(SYSADMIN);
     		
-    		if ((u == null) || (arg0.length == 2)){
+    		System.out.println("arg0:" + arg0);
+
+    		if (arg0 != null)
+	    		for (int i = 0; i< arg0.length; i++)
+					System.out.println("Running with Argument [" + i + "] =" + arg0[i] );
+	    	
+    		System.out.println("(arg0 != null):" + (arg0 != null));
+    		System.out.println("((arg0 != null) && (arg0.length == 2)):" + ((arg0 != null) && (arg0.length == 2)));
+    		System.out.println("((u == null) || ((arg0 != null) && (arg0.length == 2))):" + ((u == null) || ((arg0 != null) && (arg0.length == 2))));
     		
-//    		for (int i = 0; i< arg0.length; i++)
-//    			System.out.println("Running with Argument [" + i + "] =" + arg0[i] );
-//
-//        	if (arg0.length == 2){
+    		if ((u == null) || ((arg0 != null) && (arg0.length == 2))){
+    		
 	        	System.out.println("EXECUTING ApplicationManager this will create or replace the SUPER USER " + SYSADMIN + " !!!! - ");
-	        	String password = arg0[0];
-	        	String email = arg0[1];
+	        	String password = "P@ssword1";
+	        	String email = "sysadmin@herokuconnectapi.com";
+	        	
+	        	//This means reset!!!
+	        	if ((arg0 != null) && (arg0.length == 2)) {
+		        	password = arg0[0];
+		        	email = arg0[1];
+	        	}
+
 	        	BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	    		String hashedPassword = passwordEncoder.encode(password);
 	    		
