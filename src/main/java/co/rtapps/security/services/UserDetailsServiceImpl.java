@@ -32,9 +32,22 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return userRepository.findByUsername(username);
 	}
 
+	@Transactional
 	public void save(UserAccount user) {
+		Set<Role> newRoles = new HashSet<Role>();
+
+		for (Role r : user.getRoles()) {
+			Role nr = userRolesRepository.findByName(r.getName());
+			if (nr == null)
+				nr = userRolesRepository.save(r);
+
+			newRoles.add(nr);
+		}
+		user.setRoles(newRoles);
+
 		userRepository.save(user);
 	}
+
 
 	public List<Role> findRolesByUsername(String username) {
 		return userRolesRepository.findUserRolesByUserName(username);
@@ -42,6 +55,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	
 	public void remove(String username){
 		userRepository.delete(findByUsername(username));
+	}
+	
+	public Role findRoleByName(String role){
+		return userRolesRepository.findByName(role);
 	}
 
 	@Override
